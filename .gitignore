@@ -45,3 +45,6 @@ bower_components
 **/bower_components/*
 
 src/plugins/telemetry/public/bower_components
+
+# Visual Studio Code Files #
+.vscode/*
