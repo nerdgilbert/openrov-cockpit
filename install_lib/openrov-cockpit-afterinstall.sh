@@ -27,8 +27,8 @@ chgrp -R admin /opt/openrov/cockpit
 # bits.
 #
 
-/opt/openrov/cockpit/linux/rc.local
+#/opt/openrov/cockpit/linux/rc.local
 
-exit 0
+#exit 0
 
-__EOF__
+#__EOF__
