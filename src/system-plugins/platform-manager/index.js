@@ -1,3 +1,12 @@
+var oldpath = '';
+if (process.env['NODE_PATH']!==undefined){
+  oldpath = process.env['NODE_PATH'];
+}
+ //just in case already been set leave it alone
+  process.env['NODE_PATH']=__dirname+':'+oldpath;
+  require('module').Module._initPaths();
+  console.log("Set NODE_PATH to: "+process.env['NODE_PATH'] );
+
 var fs 		= require( "fs" );
 var path 	= require( "path" );
 var Q 		= require( "q" );
@@ -6,7 +15,7 @@ var PlatformManager = function( name, deps )
 {
 	var globalEmitter 	= deps.globalEventLoop;
 	var cockpitEmitter 	= deps.cockpit;
-	var platformNames = getDirectories( "./platforms" );
+	var platformNames = getDirectories( path.join( __dirname, "platforms" ) );
 	
 	var manager = {};
 	

@@ -49,7 +49,7 @@ nconf.defaults({
   'video_device': '/dev/video0',
   'video_port': 8090,
   'port': 8080,
-  'serial': '/dev/ttyO1',
+  'serial': '/dev/ttyAMA0',
   'serial_baud': 115200,
   'dashboardURL': '',
   'USE_MOCK' : false,

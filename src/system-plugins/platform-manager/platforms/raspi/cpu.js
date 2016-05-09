@@ -2,7 +2,7 @@ var Q 			= require( "q" );
 var fs 			= require( "fs" );
 var path		= require( "path" );
 var cpuInfo		= require( "./lib/cpuinfo.js" );
-var getFuncs 	= require( "functions.js" );
+var getFuncs 	= require( "./functions.js" );
 
 var EventEmitter = require("events").EventEmitter;
 

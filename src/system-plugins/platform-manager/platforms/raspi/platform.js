@@ -3,8 +3,8 @@ var fs 				= require("fs");
 var path			= require("path");
 var EventEmitter 	= require("events").EventEmitter;
 
-var loadCpuConfig	= require( "cpu.js" );
-var loadBoardConfig	= require( "board.js" );
+var loadCpuConfig	= require( "./cpu.js" );
+var loadBoardConfig	= require( "./board.js" );
 
 var createPlatform = function()
 {

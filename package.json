@@ -44,7 +44,8 @@
     "serve-index": "^1.7.3",
     "socket.io": "~1.4.5",
     "sync": "",
-    "systemd": "git://github.com/plietar/node-systemd.git"
+    "systemd": "git://github.com/plietar/node-systemd.git",
+    "binary-parser": "^1.1.5"
   },
   "bundleDependencies": [
     "express",
