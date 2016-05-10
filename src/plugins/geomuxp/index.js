@@ -78,16 +78,50 @@ geomux.prototype.startCamera = function startCamera(device){
 
   var self = this;
 
-  monitor.on('stderr',function(data){
+  monitor.on('stderr',function(data)
+  {
     var msg = data.toString('utf-8');
-    var service;
-    try {
-      service = JSON.parse(msg);
-    } catch (e) {
+    
+    var status;
+    
+    try 
+    {
+      status = JSON.parse(msg);
+      
+      if( status.type === undefined )
+      {
+        throw "Invalid message structure";
+      }
+    } 
+    catch (e) 
+    {
       return; //abort, not a json message
     }
-    if ('service' in service){
-      self.deps.globalEventLoop.emit('CameraRegistration',{location:service.txtRecord.cameraLocation, videoMimeType:service.txtRecord.videoMimeType, resolution:service.txtRecord.resolution, framerate:service.txtRecord.framerate, relativeServiceUrl:service.txtRecord.relativeServiceUrl, sourcePort:service.port, sourceAddress:service.addresses[0]});
+    
+    console.log( JSON.stringify( msg ) );
+    
+    if( status.type === "CameraAnnouncement" )
+    {
+      self.deps.globalEventLoop.emit('CameraRegistration',
+      { 
+        location:           status.payload.txtRecord.cameraLocation,
+        videoMimeType:      status.payload.txtRecord.videoMimeType,
+        resolution:         status.payload.txtRecord.resolution,
+        framerate:          status.payload.txtRecord.framerate,
+        relativeServiceUrl: status.payload.txtRecord.relativeServiceUrl,
+        sourcePort:         status.payload.port,
+        sourceAddress:      status.payload.addresses[0]
+      });  
+    }
+    else if( status.type === "ChannelHealth" )
+    {
+      self.deps.globalEventLoop.emit('ChannelHealth',
+      { 
+        channel:        status.payload.chNum,
+        fps:            status.payload.stats.fps,
+        droppedFrames:  status.payload.stats.droppedFrames,
+        latency_us:     status.payload.stats.latency_us
+      });  
     }
 
   });
