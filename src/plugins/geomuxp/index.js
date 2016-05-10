@@ -56,6 +56,7 @@ geomux.prototype.startCamera = function startCamera(device){
   if (process.env.GEO_MOCK == 'true'){
     geoprogram = require.resolve('geo-video-simulator');
   }
+  
   else {
     try {
       geoprogram =require.resolve('geo-video-server')
@@ -95,10 +96,9 @@ geomux.prototype.startCamera = function startCamera(device){
     } 
     catch (e) 
     {
+      console.log( "Unknown message: " + msg );
       return; //abort, not a json message
     }
-    
-    console.log( JSON.stringify( msg ) );
     
     if( status.type === "CameraAnnouncement" )
     {
@@ -122,6 +122,11 @@ geomux.prototype.startCamera = function startCamera(device){
         droppedFrames:  status.payload.stats.droppedFrames,
         latency_us:     status.payload.stats.latency_us
       });  
+      
+      console.log( "Camera Health and Status Update:" );
+      console.log( "Dropped Frames: " + status.payload.stats.droppedFrames );
+      console.log( "FPS: " + status.payload.stats.fps );
+      console.log( "Latency (us): " + status.payload.stats.latency_us );
     }
 
   });
