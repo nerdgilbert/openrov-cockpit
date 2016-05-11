@@ -1,0 +1,75 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-listbox/paper-listbox.html">
+<link rel="import" href="../paper-item/paper-item.html">
+
+<link rel="import" href="../paper-slider/paper-slider.html">
+<!--<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">-->
+
+<dom-module id="gc6500-settings-manager">
+
+	<style>
+	</style>
+	
+	<template>
+		
+		<!--<paper-dropdown-menu label="Channel">
+			<paper-listbox id="menu" on-core-select="{{selectedItem}}" class="dropdown-content">
+				<template is="dom-repeat" items="{{listItems}}">
+					<paper-item id="{{item.id}}">{{item.label}}</paper-item>
+				</template>
+			</paper-listbox>
+		</paper-dropdown-menu>-->
+		
+		<!--<div>Normal</div>
+		<paper-slider min="10" max="200" value="110"></paper-slider>
+		<div>Editable</div>
+		<paper-slider class="red" value="23" max="255" editable></paper-slider>
+		<div>Notches</div>
+		<paper-slider id="ratings" pin snaps max="10" max-markers="10" step="1" value="5" editable></paper-slider>-->
+
+		<h4>GC6500 Settings Manager</h4>
+		<hr>
+		
+		<paper-dropdown-menu label="Channel">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+				<template is="dom-repeat" items="{{listItems}}">
+					<paper-item id="{{item.id}}">{{item.label}}</paper-item>
+				</template>
+			</paper-listbox>
+		</paper-dropdown-menu>
+		
+
+	</template>
+	
+	<script>
+	(function () 
+	{
+		Polymer(
+		{
+			is: 'gc6500-settings-manager',
+			
+			attached: function()
+			{
+				this.listItems = 
+				[
+					{label:"First Label", id:"firstItem"}, 
+					{label:"Second Label, A Long-Winded One", id:"secondItem"}
+				]
+			},
+			
+			properties: 
+			{
+			},
+			
+			
+			selectedItem: function(e, detail, sender) 
+			{
+				console.log( "hey" );
+				console.log(detail.item.id);
+			}
+		});
+	}());
+	</script>
+</dom-module>
