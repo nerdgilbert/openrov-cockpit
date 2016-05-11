@@ -8,7 +8,7 @@ function GPS(name, deps)
 	var gpsd = require( 'node-gpsd' );
 	
 	this.isConnecting 				= false;
-	this.automaticallyReconnect 	= true;
+	this.automaticallyReconnect 	= false;
 	this.reconnectTimer;
 	
 	this.listener = new gpsd.Listener(
