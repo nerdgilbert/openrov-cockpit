@@ -31,22 +31,128 @@
 		<h4>GC6500 Settings Manager</h4>
 		<hr>
 		
-		<!--<paper-dropdown-menu label="Channel">
+        <h4>AVC Profile</h4>
+		<paper-dropdown-menu label="AVC Profile">
 			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
-				<template is="dom-repeat" items="{{listItems}}">
-					<paper-item id="{{item.id}}">{{item.label}}</paper-item>
-				</template>
+				<paper-item label="baseline"></paper-item>
+                <paper-item label="main"></paper-item>
+                <paper-item label="high"></paper-item>
 			</paper-listbox>
-		</paper-dropdown-menu>-->
+		</paper-dropdown-menu>
         
-        <h5>Test1</h5>
-        <paper-checkbox>label</paper-checkbox>
+        <h4>Framerate</h4>
+        <paper-slider min="1" max="30" pin></paper-slider>
         
-        <h5>Test1</h5>
-		<paper-toggle-button>Toggle</paper-toggle-button>
+        <h4>Bitrate</h4>
+        <paper-slider min="2000000" max="10000000" pin></paper-slider>
         
-        <h5>Test1</h5>
-        <paper-slider min="10" max="200" value="110"></paper-slider>
+        <h4>GOP Length</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>GOP Hierarchy</h4>
+        <paper-slider min="0" max="4" pin snaps max-markers="5" step="1"></paper-slider>
+        
+        
+        <h3>Sensor Parameters</h3>
+        
+        <h4>Contrast</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Zoom</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Pan</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Tilt</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Brightness</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Hue</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Gamma</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Saturation</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Gain</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Sharpness</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Max Analog Gain</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Sharpen Filter</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Min Autoexposure Framerate</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Temporal Filter Strength</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+        <h4>Gain Multiplier</h4>
+        <paper-slider min="1" max="120" pin></paper-slider>
+        
+		<paper-toggle-button>Histogram EQ</paper-toggle-button>
+		<paper-toggle-button>Flip Vertical</paper-toggle-button>
+		<paper-toggle-button>Flip Horizontal</paper-toggle-button>
+        
+
+        <h4>Exposure Mode</h4>
+		<paper-dropdown-menu label="Exposure Mode">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+				<paper-item label="auto"></paper-item>
+                <paper-item label="manual"></paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
+        
+        <h4>Noise Filter Mode</h4>
+		<paper-dropdown-menu label="Exposure Mode">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+				<paper-item label="auto"></paper-item>
+                <paper-item label="manual"></paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
+        
+        <h4>White Balance Mode</h4>
+		<paper-dropdown-menu label="Exposure Mode">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+				<paper-item label="auto"></paper-item>
+                <paper-item label="manual"></paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
+        
+        <h4>Wide Dynamic Range Mode</h4>
+		<paper-dropdown-menu label="Exposure Mode">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+                <paper-item label="disabled"></paper-item>
+				<paper-item label="auto"></paper-item>
+                <paper-item label="manual"></paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
+        
+        <h4>Zone Exposure Mode</h4>
+		<paper-dropdown-menu label="Exposure Mode">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+				<paper-item label="Enabled"></paper-item>
+                <paper-item label="Disabled"></paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
+        
+        <h4>Zone White Balance Mode</h4>
+		<paper-dropdown-menu label="Exposure Mode">
+			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
+				<paper-item label="Enabled"></paper-item>
+                <paper-item label="Disabled"></paper-item>
+			</paper-listbox>
+		</paper-dropdown-menu>
 
 	</template>
 	
