@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "paper-checkbox": "PolymerElements/paper-checkbox#^1.0.0",
+    "paper-toggle-button": "PolymerElements/paper-toggle-button#^1.0.0",
     "paper-slider": "PolymerElements/paper-slider#^1.0.0"
   }
 }

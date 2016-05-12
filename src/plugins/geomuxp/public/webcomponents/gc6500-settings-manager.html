@@ -4,8 +4,7 @@
 <link rel="import" href="../paper-item/paper-item.html">
 
 <link rel="import" href="../paper-slider/paper-slider.html">
-<!--<link rel="import" href="../paper-radio-group/paper-radio-group.html">
-<link rel="import" href="../paper-checkbox/paper-checkbox.html">-->
+<link rel="import" href="../paper-toggle-button/paper-toggle-button.html">
 
 <dom-module id="gc6500-settings-manager">
 
@@ -32,14 +31,22 @@
 		<h4>GC6500 Settings Manager</h4>
 		<hr>
 		
-		<paper-dropdown-menu label="Channel">
+		<!--<paper-dropdown-menu label="Channel">
 			<paper-listbox id="menu" on-iron-select="selectedItem" class="dropdown-content">
 				<template is="dom-repeat" items="{{listItems}}">
 					<paper-item id="{{item.id}}">{{item.label}}</paper-item>
 				</template>
 			</paper-listbox>
-		</paper-dropdown-menu>
-		
+		</paper-dropdown-menu>-->
+        
+        <h5>Test1</h5>
+        <paper-checkbox>label</paper-checkbox>
+        
+        <h5>Test1</h5>
+		<paper-toggle-button>Toggle</paper-toggle-button>
+        
+        <h5>Test1</h5>
+        <paper-slider min="10" max="200" value="110"></paper-slider>
 
 	</template>
 	
