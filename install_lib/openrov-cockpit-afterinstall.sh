@@ -13,5 +13,3 @@ chgrp -R admin /opt/openrov/cockpit
 mkdir -p /etc/nginx/locations-enabled
 ln -s /opt/openrov/cockpit/linux/nginx.location /etc/nginx/locations-enabled/cockpit.conf
 
-
-exit 0
